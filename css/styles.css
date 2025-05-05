@@ -1,0 +1,608 @@
+:root {
+    --primary-color: #2A6592;
+    --secondary-color: #5CBBF6;
+    --accent-color: #E76F51;
+    --light-bg: #F8F9FA;
+    --dark-bg: #212529;
+    --text-color: #333;
+    --light-text: #F8F9FA;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--light-bg);
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    width: 100%;
+    position: relative;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--secondary-color);
+}
+
+/* Header Styles */
+header {
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    padding: 2rem 0;
+    text-align: center;
+    width: 100%;
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.header-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.header-content p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* Main Content */
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+}
+
+section {
+    margin-bottom: 4rem;
+}
+
+section h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+section h2::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 50px;
+    height: 4px;
+    background-color: var(--accent-color);
+}
+
+/* About Section */
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 2rem;
+    align-items: center;
+}
+
+.profile-img {
+    border-radius: 50%;
+    max-width: 100%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Skills Section */
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.skill-tag {
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.skill-tag:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+.skill-tag.active {
+    background-color: var(--accent-color);
+}
+
+
+
+
+/* Skill Details Styles */
+.skill-details-container {
+    margin-top: 2rem;
+    display: none;
+}
+
+.skill-details {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+/* Animation for appearing */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.skill-details-container.show {
+    display: block;
+    animation: fadeIn 0.3s ease forwards;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    padding: 3rem 0 1rem;
+    margin-top: 4rem;
+    width: 100%;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 2rem;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+    margin-bottom: 2rem;
+}
+
+.footer-section h3 {
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+    position: relative;
+}
+
+.footer-section h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 50px;
+    height: 2px;
+    background-color: #4CAF50;
+}
+
+.social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.social-links a {
+    color: #bbbbbb;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #4CAF50;
+}
+
+.footer-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.8rem;
+}
+
+.footer-section ul li a {
+    color: #bbbbbb;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: #4CAF50;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid #333;
+    margin-top: 1rem;
+}
+
+/* Navigation */
+nav {
+    background-color: var(--dark-bg);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px; /* Fixed height for navigation */
+}
+
+.logo {
+    color: var(--light-text);
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 1rem 0;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    position: fixed;
+    right: 0;
+    top: 60px; /* Match the height of nav */
+    background-color: var(--dark-bg);
+    flex-direction: column;
+    width: 250px;
+    height: auto;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    padding: 20px 0;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    z-index: 99;
+}
+
+.nav-links li {
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.nav-links li a {
+    color: var(--light-text);
+    padding: 10px 20px;
+    display: block;
+    width: 100%;
+    font-size: 1rem;
+}
+
+.nav-links li a:hover {
+    color: var(--secondary-color);
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Hide social nav items by default */
+.social-nav-item {
+    display: none;
+}
+
+/* Burger menu */
+.burger {
+    display: block;
+    cursor: pointer;
+    z-index: 101;
+    padding: 10px;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: var(--light-text);
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+/* Show the menu when active */
+.nav-links.active {
+    transform: translateX(0%);
+}
+
+/* Show social nav items ONLY when menu is active */
+.nav-links.active .social-nav-item {
+    display: block;
+}
+
+/* Make nav items visible when menu is active */
+.nav-links.active li {
+    opacity: 1;
+}
+
+/* Burger animation when toggled */
+.burger.toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.burger.toggle .line2 {
+    opacity: 0;
+}
+
+.burger.toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* Animation for Nav Links */
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .nav-links {
+        width: 70%;
+    }
+    
+    .header-content h1 {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .nav-links {
+        width: 100%;
+    }
+    
+    .project-card {
+        min-width: 100%;
+    }
+    
+    .header-content h1 {
+        font-size: 1.8rem;
+    }
+}
+
+
+
+.social-nav-item a {
+    display: flex;
+    align-items: center;  /* Corrected alignment */
+    gap: 30px;            /* Adjust space between icon and text */
+    text-decoration: none;
+    color: white;         /* Adjust text color */
+    font-size: 16px;      /* Adjust text size */
+    padding: 8px 0;       /* Add spacing between menu items */
+}
+
+.social-nav-item img {
+    width: 20px;       /* Set fixed width */
+    height: 20px;      /* Set fixed height */
+}
+
+
+
+
+
+
+/* All Projects Section Styles */
+#all-projects {
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+}
+
+.projects-filter {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.filter-btn {
+    padding: 8px 15px;
+    margin: 5px;
+    background-color: #e0e0e0;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 14px;
+}
+
+.filter-btn.active, .filter-btn:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+.all-projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.project-item {
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.project-item .project-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.project-item .project-content {
+    padding: 20px;
+}
+
+.project-item h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.project-item p {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+/* Make the project items initially hidden when filtered */
+.project-item.hidden {
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+/* Featured Projects Section Styles */
+#projects {
+    padding: 50px 20px;
+    background-color: #fff; /* Different background to distinguish from All Projects */
+}
+
+.featured-projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+/* Use the same styling for project items in both sections */
+.project-item {
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.project-item .project-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.project-item .project-content {
+    padding: 20px;
+}
+
+.project-item h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.project-item p {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 15px;
+}
+
+.project-tag {
+    background-color: #f0f0f0;
+    color: #333;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+.project-links {
+    display: flex;
+    gap: 10px;
+}
+
+.project-link {
+    display: inline-block;
+    padding: 6px 12px;
+    background-color: #333;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.project-link:hover {
+    background-color: #555;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .featured-projects-grid,
+    .all-projects-grid {
+        grid-template-columns: 1fr;
+    }
+}
