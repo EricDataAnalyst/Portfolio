@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <head>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 20px;
+                padding: 20px;
+                background-color: #f5f5f5;
+                align-content: center;
+            }
+    
+            h1, h2 {
+                color: #333;
+            }
+    
+            a {
+                text-decoration: none;
+                color: blue;
+            }
+    
+            .project-card {
+                background: white;
+                padding: 15px;
+                border-radius: 8px;
+                box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+                margin-bottom: 20px;
+            }
+    
+            img {
+                border-radius: 5px;
+                max-width: 100%;
+            }
+            .button {
+                display: inline-block;
+                padding: 10px 20px;
+                background-color: #007bff;
+                color: white;
+                text-decoration: none;
+                border-radius: 5px;
+                transition: background-color 0.3s ease;
+            }
+        </style>  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ETL - Extract, Transform and Load</title>
+</head>
+<body>
+    <header>
+        <h1>ETL - Extract, Transform and Load</h1>
+        <a href="index.html" class="button"> ⬅ Back to Projects</a>
+    </header>
+    
+    <section>
+        <h2>Project Overview</h2>
+        <p>How can a business use raw sales transaction data to gain actionable insights that improve decision-making?</p>
+        
+        <h2>ETL Process</h2>
+
+        <h3>EXTRACT</h3>
+        <ul>
+            <li><b>Download the CSV file from Kaggle:</b> <a href="https://www.kaggle.com/datasets/shantanugarg274/sales-dataset" target="_blank">Download FIle Here</a>.</li>
+            <li><b>Use Python's pandas library to read the data.</b></li>
+                <img src="Resources/Read CSV.png" alt="Read DAtaset">
+            <li><b>Full DataFrame (Cost Column Included)</b>
+                <img src="Resources/ETL Files/Full Dataset.png" alt="Full Dataset">
+            </li>
+        </ul>
+
+
+        <h3>TRANSFORM</h3>
+        <ul>
+            <li><b>Added a Cost column for clarity, showing the origin of Profit.</b>
+                <img src="Resources/ETL Files/Cost.png" alt="Cost">
+            </li>
+            <li><b>Move the Cost column so that it appears directly after the Profit column.</b>
+                <img src="Resources/ETL Files/Move cost next to profit.JPG" alt="Move Cost">
+            </li>
+            <li><b>Drop Year-Month Column</b>
+                <p>Since the <b>OrderDate</b> column already contains the <b>Year-Month</b> information, keeping both would be redundant. Removing the <b>Year-Month</b> column helps optimize storage when uploading the dataset to the database.</p>
+                <img src="Resources/ETL Files/Drop Y-M col.JPG" alt="Drop">
+            </li>
+            <li><b>Checking and Correcting Data Types in a Pandas DataFrame.</b>
+                <img src="Resources/ETL Files/change data type.JPG" alt="Change Data Type">
+            </li>
+            <li><b>Change Column Name</b></li>
+                <img src="Resources/ETL Files/column name.JPG" alt="Change Name">
+        </ul>
+
+        <h3>LOAD</h3>
+        <ul>
+            <li><b>Create a Connection to MySQL</b>
+                <img src="Resources/ETL Files/create connection.JPG" alt="Create Connection">
+            </li>
+            <li><b>Load DataFrame into MySQL</b>
+                <img src="Resources/ETL Files/load record.JPG " alt="Load Record">
+            </li>
+            <li><b>Verify Data in MySQ</b>
+                <img src="Resources/ETL Files/check dataframe.JPG" alt="check dataframe">
+            </li>
+        </ul>
+
+        <p><b>This ETL pipeline streamlines data processing, unlocking valuable insights to drive business growth and smarter decision-making.</b></p>
+
+
+        <h3><mark>Technologies Utilized</mark></h3>
+        <ul>
+            <li><b>Python</b></li>
+            <li><b>MySQL</b></li>
+        </ul>
+
+        <h2>GitHub Page</h2>
+        <a href="https://github.com/EricDataAnalyst/ETL-Sales-Dataset" class="button">Read More On Github</a>
+    </section>
+</body>
+</html>
